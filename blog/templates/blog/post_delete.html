@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<body>
+    <h2>Warning!</h2>
+    <form method="post">
+        {% csrf_token %}
+        <p>{{ post.author }}が作成した「{{ post.title }}」を削除しますか？</p>
+        <input type="submit" value="OK">
+        <a href="{% url 'post_list' %}"><button type="button">Return</button></a>
+    </form>
+</body>
+{% endblock %}
